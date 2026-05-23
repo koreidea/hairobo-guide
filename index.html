@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hai Robo — Feature Guide</title>
+<style>
+  :root{ --bg:#0b0f1c; --card:#141a2e; --ink:#eef1f7; --mut:#9aa3b8; --cyan:#34d3e0; --line:#222a42; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.65}
+  header{padding:48px 20px 28px;text-align:center;background:radial-gradient(80% 120% at 50% 0,#16203b 0,#0b0f1c 70%)}
+  header h1{font-size:34px;margin:0 0 6px}
+  header p{color:var(--mut);margin:0;font-size:16px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px}
+  nav{position:sticky;top:0;background:rgba(11,15,28,.92);backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:24px;z-index:5}
+  nav .navin{max-width:820px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:8px 14px;font-size:13px}
+  nav a{color:var(--cyan);text-decoration:none;white-space:nowrap}
+  section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 8px;margin:18px 0}
+  h2{font-size:22px;margin:4px 0 6px}
+  h3{font-size:16px;margin:18px 0 4px;color:#cfd5e6}
+  p,li{color:#d6dbe8;font-size:15px}
+  .lead{color:var(--mut)}
+  ol,ul{padding-left:20px}
+  li{margin:5px 0}
+  code,.say{background:#0c1striped;background:#0b1124;border:1px solid var(--line);border-radius:8px;
+       padding:2px 8px;color:var(--cyan);font-size:14px;white-space:nowrap}
+  .say::before{content:"🎙 ";}
+  .tag{display:inline-block;background:#0b1124;border:1px solid var(--line);color:var(--mut);
+       border-radius:999px;padding:2px 10px;font-size:12px;margin:2px 4px 2px 0}
+  .note{background:#0b1124;border-left:3px solid var(--cyan);border-radius:8px;padding:10px 14px;margin:12px 0;color:#c7cee0;font-size:14px}
+  .shot{display:block;width:100%;max-width:340px;margin:14px auto;border-radius:14px;border:1px solid var(--line)}
+  .ph{display:block;max-width:340px;margin:14px auto;border:1px dashed #39456b;border-radius:14px;
+      padding:26px 16px;text-align:center;color:#7e8aa8;font-size:13px;background:#0b1124}
+  .ph b{color:#aab3cc;display:block;margin-bottom:4px;font-size:13px}
+  footer{color:var(--mut);text-align:center;font-size:13px;padding:30px 20px}
+  a{color:var(--cyan)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Hai&nbsp;Robo — Feature Guide</h1>
+  <p>Your voice companion for the desk. Tap the eyes or say “hai robo”, then just ask.</p>
+</header>
+
+<nav><div class="navin">
+  <a href="#start">Getting started</a>
+  <a href="#talk">Talk &amp; ask</a>
+  <a href="#weather">Weather</a>
+  <a href="#timers">Timers &amp; alarms</a>
+  <a href="#calendar">Calendar &amp; reminders</a>
+  <a href="#memory">Memory</a>
+  <a href="#expenses">Expenses</a>
+  <a href="#places">Saved places &amp; cabs</a>
+  <a href="#orders">Food orders</a>
+  <a href="#translate">Translate</a>
+  <a href="#image">Image generation</a>
+  <a href="#screen">Screen-aware (Mac)</a>
+  <a href="#focus">Focus guard</a>
+  <a href="#pet">Pet mode</a>
+  <a href="#robot">Robot &amp; controls</a>
+  <a href="#privacy">Data &amp; privacy</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="start">
+  <h2>1 · Getting started</h2>
+  <p class="lead">First launch walks you through sign-in and a quick setup. After that:</p>
+  <ul>
+    <li><b>Sign in</b> with Apple or Google — required to use the AI (chat, search, vision, translate). Your places/orders/memory sync to your account.</li>
+    <li><b>Talk:</b> <b>tap the eyes</b> once, wait for the chirp, then speak. Tap again or pause to send.</li>
+    <li><b>Hands-free:</b> say <span class="say">hai robo</span> to wake it (when always-listening is on). Wake-word detection runs on your device.</li>
+    <li><b>Settings:</b> <b>long-press anywhere</b> on the screen to open the panel.</li>
+  </ul>
+  <div class="ph"><b>Screenshot: main screen (eyes) + “hai robo” badge</b>images/start-main.png</div>
+  <div class="note">VoiceOver users: the face is a button — double-tap to talk; use the Actions rotor → “Open settings”.</div>
+</section>
+
+<section id="talk">
+  <h2>2 · Talk &amp; ask anything</h2>
+  <p>Ask questions, get short spoken answers. Examples:</p>
+  <p><span class="tag">“tell me a joke”</span><span class="tag">“what’s the capital of Japan”</span><span class="tag">“explain photosynthesis simply”</span></p>
+  <h3>Real-time / web answers</h3>
+  <p>For live info it searches the web automatically:</p>
+  <p><span class="tag">“who won the match today”</span><span class="tag">“latest news on …”</span><span class="tag">“weather tomorrow”</span></p>
+  <div class="ph"><b>Screenshot: a question + spoken reply on screen</b>images/talk.png</div>
+</section>
+
+<section id="weather">
+  <h2>3 · Weather</h2>
+  <p>Local or named-place forecast (Apple WeatherKit).</p>
+  <p><span class="tag">“what’s the weather”</span><span class="tag">“weather at home”</span><span class="tag">“will it rain tomorrow”</span></p>
+</section>
+
+<section id="timers">
+  <h2>4 · Timers, alarms &amp; stopwatch</h2>
+  <ul>
+    <li><span class="say">set a timer for 5 minutes</span></li>
+    <li><span class="say">set an alarm for 7 am</span></li>
+    <li><span class="say">start the stopwatch</span> / <span class="say">stop the stopwatch</span></li>
+  </ul>
+  <div class="ph"><b>Screenshot: running timer / stopwatch badge</b>images/timer.png</div>
+</section>
+
+<section id="calendar">
+  <h2>5 · Calendar &amp; reminders</h2>
+  <p>Reads your calendar and creates reminders (asks permission first).</p>
+  <ul>
+    <li><span class="say">what’s my next meeting</span></li>
+    <li><span class="say">remind me to call mom at 6 pm</span></li>
+  </ul>
+</section>
+
+<section id="memory">
+  <h2>6 · Memory</h2>
+  <p>Tell it facts to remember; it personalises future replies.</p>
+  <p><span class="tag">“remember my name is Bharath”</span><span class="tag">“remember I’m vegetarian”</span><span class="tag">“what do you remember about me”</span></p>
+  <div class="note">Memory is stored on your device. Turn on <b>Settings → Account &amp; sync → Sync memory</b> to back it up to your account across devices.</div>
+</section>
+
+<section id="expenses">
+  <h2>7 · Expense tracking</h2>
+  <p>Log spends by voice; ask for totals. Export anytime.</p>
+  <ul>
+    <li><span class="say">I spent 250 on lunch</span></li>
+    <li><span class="say">how much did I spend this week</span></li>
+  </ul>
+  <p>Export: <b>Settings → Your data → Data &amp; privacy → Export expenses (CSV)</b>.</p>
+</section>
+
+<section id="places">
+  <h2>8 · Saved places &amp; cab booking</h2>
+  <h3>Save a place</h3>
+  <ol>
+    <li>Long-press → <b>Settings → Your data → Saved places</b>.</li>
+    <li>Type a name (e.g. <i>home</i>, <i>office</i>) and an address — pick a suggestion from the dropdown.</li>
+  </ol>
+  <h3>Use it</h3>
+  <ul>
+    <li><span class="say">book a cab home</span></li>
+    <li><span class="say">uber from office to home</span></li>
+    <li><span class="say">compare cab prices to the airport</span></li>
+  </ul>
+  <div class="ph"><b>Screenshot: Saved places editor with home/office</b>images/places.png</div>
+</section>
+
+<!-- ============ FOOD ORDERS (detailed) ============ -->
+<section id="orders">
+  <h2>9 · Saved food orders <span class="tag">most detailed</span></h2>
+  <p class="lead">Re-order food/groceries by voice. None of these apps (Swiggy, Zomato, Blinkit, BigBasket)
+     let outside apps fill a cart directly, so Hai Robo saves a <b>link to your order</b> (or a shopping
+     list) and opens it in the app — you just tap Checkout. Two modes:</p>
+
+  <h3>Mode A — Save an order link (best for “repeat my usual”)</h3>
+  <ol>
+    <li><b>Open the food app</b> (e.g. Blinkit) and build the cart you want, OR open a past order /
+        “share cart” screen.</li>
+    <li><b>Get the link.</b> Tap the app’s <b>Share</b> button (or copy the URL from the order page).
+        Copy it. This is a “universal link” that re-opens that exact cart/order.</li>
+    <div class="ph"><b>Screenshot: food app Share button → copy link</b>images/order-share.png</div>
+    <li>In Hai Robo, long-press → <b>Settings → Your data → Saved orders</b>.</li>
+    <li><b>Name</b> it (e.g. <i>weekly</i>, <i>pizza</i>).</li>
+    <li>Pick the <b>app</b> in the segmented control (Swiggy / Zomato / Blinkit / BigBasket).</li>
+    <li><b>Paste the link</b> into “Paste past-order link”.</li>
+    <li>Tap <b>Save URL order</b>.</li>
+    <div class="ph"><b>Screenshot: Saved orders — Name + App picker + pasted link + Save</b>images/order-save-url.png</div>
+    <li><b>Use it:</b> say <span class="say">order weekly</span> → Hai Robo opens that link in the app →
+        tap <b>Checkout</b>.</li>
+  </ol>
+  <div class="note"><b>Tip:</b> if two saved orders share a name on different apps, say the app too —
+     <span class="say">order groceries on blinkit</span>.</div>
+
+  <h3>Mode B — Build a shopping list (cycles item-by-item)</h3>
+  <p>No link needed. Hai Robo opens each item in the app’s search, one at a time.</p>
+  <ol>
+    <li><b>Settings → Saved orders</b> → set a <b>Name</b> + pick the <b>app</b>.</li>
+    <li>Under “OR build a shopping list”, type an <b>item</b> + quantity → tap <b>+</b>. Repeat for each item.</li>
+    <li>Tap <b>Save list</b>.</li>
+    <div class="ph"><b>Screenshot: shopping-list editor with milk ×2, bread ×1…</b>images/order-list.png</div>
+    <li><b>Use it:</b> say <span class="say">order weekly groceries</span>. Hai Robo shows “1× milk”, opens
+        the app’s search for it → you tap <b>Add</b>, swipe back → the <b>next item opens automatically</b>,
+        and so on through the list.</li>
+  </ol>
+  <div class="note">BigBasket’s search opens in Safari (its links aren’t in-app); for full in-app cycling
+     save the list with <b>Blinkit</b> as the app.</div>
+  <h3>Edit / delete</h3>
+  <p>In Saved orders: tap the <b>pencil</b> on a list to re-open it in the editor; tap the <b>trash</b>
+     to delete. You can also say <span class="say">add eggs to weekly</span>.</p>
+</section>
+<!-- ============ /FOOD ORDERS ============ -->
+
+<section id="translate">
+  <h2>10 · Translate, subtitles &amp; interpreter</h2>
+  <h3>One-shot translate</h3>
+  <p><span class="say">translate from hindi</span> → it says “go ahead”, you speak, it replies in English.</p>
+  <h3>Live subtitles</h3>
+  <p><span class="say">subtitle mode</span> → continuous Hindi→English captions on screen (great for meetings/TV). Tap Stop to end.</p>
+  <h3>Two-way interpreter</h3>
+  <p><span class="say">interpreter mode</span> → speak English or Hindi; it translates each turn aloud the other way. Tap Stop to end.</p>
+  <div class="ph"><b>Screenshot: live subtitle / interpreter overlay</b>images/translate.png</div>
+</section>
+
+<section id="image">
+  <h2>11 · Image generation</h2>
+  <p>Make a picture from words; it appears full-screen.</p>
+  <p><span class="tag">“show me an image of a cat astronaut”</span><span class="tag">“generate a picture of a sunset beach”</span><span class="tag">“provide me an image of a robot”</span></p>
+  <div class="ph"><b>Screenshot: generated image full-screen</b>images/image-gen.png</div>
+</section>
+
+<section id="screen">
+  <h2>12 · Screen-aware help (optional Mac companion)</h2>
+  <p>Pair the Hai Robo Mac app, then ask about what’s on your Mac screen.</p>
+  <ol>
+    <li><b>Settings → Connections → Mac companion</b> → <b>Scan Mac QR code</b> (open the Mac app to show the code).</li>
+    <li>Ask: <span class="say">what’s wrong on my screen</span> · <span class="say">improve this design</span>.</li>
+  </ol>
+  <div class="note">The first screen request triggers a one-time “find devices on your local network” prompt — that’s expected.</div>
+</section>
+
+<section id="focus">
+  <h2>13 · Focus &amp; distraction guard</h2>
+  <p>A Pomodoro focus timer that can shield distracting apps during a session (Screen Time).</p>
+  <ul>
+    <li><b>Settings → Assistant → Focus &amp; distraction guard</b> — set durations, pick apps to shield.</li>
+    <li>Start a focus session; Hai Robo nudges you if you drift, praises you when you return.</li>
+  </ul>
+</section>
+
+<section id="pet">
+  <h2>14 · Pet mode</h2>
+  <p>When idle, the dock acts alive — cute sounds, glances around, bobs its head.</p>
+  <p>Toggle in <b>Settings → Assistant → Pet mode</b>.</p>
+</section>
+
+<section id="robot">
+  <h2>15 · Robot dock &amp; controls <span class="tag">optional hardware</span></h2>
+  <p>Everything above works on the phone alone. With the Hai Robo dock it physically turns to face you.</p>
+  <ul>
+    <li><b>Pair:</b> Settings → Connections → <b>Pair Deskmate</b> → Scan → tap your unit.</li>
+    <li><b>Manual control:</b> Settings → Robot controls → <b>Manual control</b> (pan / tilt / lift).</li>
+    <li><b>Hardware actions:</b> auto-level, calibrate, emergency stop.</li>
+  </ul>
+  <div class="ph"><b>Screenshot: manual control pad</b>images/manual.png</div>
+</section>
+
+<section id="privacy">
+  <h2>16 · Your data &amp; account</h2>
+  <ul>
+    <li><b>Export / delete</b> your places, orders, expenses: Settings → Your data → <b>Data &amp; privacy</b>.</li>
+    <li><b>Sign out / delete account:</b> Settings → Account &amp; sync → <b>Account</b>.</li>
+    <li>Wake-word audio &amp; face tracking are processed <b>on your device</b> and never uploaded.</li>
+    <li>Full policy: <a href="https://koreidea.github.io/hairobo-privacy/">Privacy Policy</a>.</li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  Hai&nbsp;Robo · KOREIDEA INNOVATIONS PRIVATE LIMITED · <a href="mailto:admin@koreidea.com">admin@koreidea.com</a>
+</footer>
+
+<script>
+// Show a labelled placeholder when a screenshot file isn't uploaded yet.
+document.querySelectorAll('img.shot').forEach(function(img){
+  img.addEventListener('error',function(){
+    var d=document.createElement('div'); d.className='ph';
+    d.innerHTML='<b>Add screenshot</b>'+(img.getAttribute('alt')||'')+'<br>'+img.getAttribute('src');
+    img.replaceWith(d);
+  });
+});
+</script>
+</body>
+</html>
